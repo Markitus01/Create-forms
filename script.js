@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', function (){
     //caixa.placeholder = 'ABC-1234 | A-1234-AB';
     caixa.setAttribute('placeholder','ABC-1234 | A-1234-AB');
     f_esborrarAtributs();
+
+    f_insertAdjacentHTML();
+
+    let nou_li = document.createElement("li");
+    nou_li.textContent = "JQuery";
+    let papi = document.getElementById("list");
+    let qt_lis = document.getElementsByTagName("li").length;
+    let ultim_li = document.getElementsByTagName("li")[qt_lis-1];
+    papi.insertBefore(nou_li, ultim_li);
 });
 
 function f_esborrarAtributs()
@@ -48,4 +57,16 @@ function f_esborrarAtributs()
     document.getElementById('nMat').removeAttribute('placeholder');
 }
 
+function f_insertAdjacentHTML()
+{
+    let ul = document.createElement("ul");
+    ul.id = "list";
 
+    document.body.append(ul);
+
+    ul.insertAdjacentHTML("afterbegin", "<li>CSS</li>");
+    ul.insertAdjacentHTML("afterbegin", "<li>HTML</li>");
+    ul.insertAdjacentHTML("afterend", "<p>Frontend developer</p>");
+    ul.insertAdjacentHTML("beforeend", "<li>Javascript</li>");
+    ul.insertAdjacentHTML("beforebegin", "<h2>Web Technology</h2>");
+}

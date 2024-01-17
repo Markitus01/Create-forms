@@ -101,8 +101,13 @@ function f_main()
         console.log(radio);
 
         //Ex 16
-        let abbr = document.querySelectorAll("input[title]");
-        console.log(abbr); //no va F
+        let abbr = document.querySelectorAll("abbr[title]")[1];
+        console.log(abbr);
+
+        //Ex eliminar
+        let code = document.querySelectorAll("table tr td code")[6];
+        console.log(code);
+        code.remove();
 }
 
 /*<!-- 1. Seleccionar la primera etiqueta h2. Mostrar el seu contingut per consola -->
